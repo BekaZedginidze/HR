@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace HR.Entity
 {
-    public class Registration
+    public class Users
     {
         [Key]
         public int Id { get; set; }
@@ -11,5 +13,8 @@ namespace HR.Entity
         public string Password { get; set; }
         public string RePassword { get; set; }
         public string Email { get; set; }   
+        public DateTime CreateOnDate { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

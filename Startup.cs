@@ -11,8 +11,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using HR.Infrastructure;
 using Microsoft.OpenApi.Models;
+using HR.Application.Service.Abstraction;
+using HR.Application.Service.Implementation;
+using HR.Application.Infrastructure;
 
 namespace HR
 {
@@ -61,6 +63,7 @@ namespace HR
     });
             });
             services.AddDbContext<HrDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IUserService, UserService>();
         }
 
 

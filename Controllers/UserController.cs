@@ -1,5 +1,4 @@
 ﻿using HR.Entity;
-using HR.Infrastructure;
 using HR.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,8 +10,12 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
 
+
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
+using HR.Application.Service.Abstraction;
+using HR.Application.Service.Models;
+using static HR.Application.Service.Implementation.CustomerService;
 
 namespace HR.Controllers
 {
@@ -24,70 +27,43 @@ namespace HR.Controllers
     public class UserController : ControllerBase
     {
 
-        private readonly HrDbContext hrDbContext;
-        public UserController(HrDbContext hrDbContext)
+        private readonly IUserService _userSerivce;
+        public UserController(IUserService userSerivce)
         {
-            this.hrDbContext = hrDbContext;
+            _userSerivce = userSerivce;
         }
 
-        private readonly List<UserRegistration> registeredUsers = new List<UserRegistration>();
+        private readonly List<UserRegistrationDto> registeredUsers = new List<UserRegistrationDto>();
 
         [HttpPost("register")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult Register(UserRegistration model)
+        public IActionResult Register(UserRegistrationDto model)
         {
-        //    if (registeredUsers.Any(u => u.Id == model.Id))
-          //  {
-            //    return Conflict("User with the provided ID already exists.");
-           // }
-
-            if (model.Password != model.RePassword)
-            {
-                return BadRequest("Passwords do not match.");
-            }
-
-
-            var user = new Registration()
-            {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Password = model.Password,
-                RePassword = model.RePassword,
-                Email = model.Email,
-                
-            };
-
-            var response = hrDbContext.Registration.Add(user);
-
-            hrDbContext.SaveChanges();
+            ResponseEnumDto userId = _userSerivce.UserRegister(model);
+           
 
             var responseData = new ApiResponse
             {
                 Success = true,
                 Message = "Successfully Registered",
-                Data = user.Id
+                Data = userId
             };
 
-            return Ok(responseData);
+            return Ok(userId);
         }
+
+      //  private readonly List<UserLoginDto> loginUsers = new List<UserLoginDto>;
 
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult Login(UserLogin model)
+        public IActionResult Login(UserLoginDto model)
         {
-            var user = hrDbContext.Registration.SingleOrDefault(u => u.Email == model.Email);
-
-            if (user == null || user.Password != model.Password)
-            {
-                return Unauthorized("Invalid email or password.");
-            }
-
-            var token = GenerateJwtToken(user);
-
+            string token = _userSerivce.UserLogin(model);
+            
             return Ok(new { Token = token });
         }
 
-        private string GenerateJwtToken(Registration user)
+        private string GenerateJwtToken(Users user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ThisIsMySecretKeyForJWTTokenGeneration"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -102,7 +78,7 @@ namespace HR.Controllers
 
 
             var token = new JwtSecurityToken(
-                
+
                 issuer: "HR",
                 audience: "YourAudience",
                 claims: claims,
@@ -115,7 +91,7 @@ namespace HR.Controllers
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;
 
-          //  return "test";
+          
         }
     }
       
