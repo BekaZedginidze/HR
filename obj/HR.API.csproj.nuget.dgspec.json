@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR\\HR.API.csproj": {}
+    "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR\\HR.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR.Application\\HR.Application.csproj": {
+    "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR.Application\\HR.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR.Application\\HR.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR.Application\\HR.Application.csproj",
         "projectName": "HR.Application",
-        "projectPath": "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR.Application\\HR.Application.csproj",
+        "projectPath": "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR.Application\\HR.Application.csproj",
         "packagesPath": "C:\\Users\\Beka.Zedginidze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR.Application\\obj\\",
+        "outputPath": "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Beka.Zedginidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "netcoreapp6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net6.0": {
+            "targetAlias": "netcoreapp6.0",
             "projectReferences": {}
           }
         },
@@ -37,12 +37,28 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net6.0": {
+          "targetAlias": "netcoreapp6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
@@ -73,21 +89,21 @@
         }
       }
     },
-    "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR\\HR.API.csproj": {
+    "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR\\HR.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR\\HR.API.csproj",
+        "projectUniqueName": "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR\\HR.API.csproj",
         "projectName": "HR.API",
-        "projectPath": "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR\\HR.API.csproj",
+        "projectPath": "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR\\HR.API.csproj",
         "packagesPath": "C:\\Users\\Beka.Zedginidze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR\\obj\\",
+        "outputPath": "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Beka.Zedginidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "netcoreapp6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -95,11 +111,11 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net6.0": {
+            "targetAlias": "netcoreapp6.0",
             "projectReferences": {
-              "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR.Application\\HR.Application.csproj": {
-                "projectPath": "C:\\Users\\Beka.Zedginidze\\source\\repos\\HR\\HR.Application\\HR.Application.csproj"
+              "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR.Application\\HR.Application.csproj": {
+                "projectPath": "C:\\Users\\Beka.Zedginidze\\Downloads\\HR_Project-main\\HR_Project-main\\HR.Application\\HR.Application.csproj"
               }
             }
           }
@@ -111,26 +127,32 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net6.0": {
+          "targetAlias": "netcoreapp6.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.1.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.32, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -142,7 +164,7 @@
             },
             "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[4.8.5, )"
+              "version": "[4.8.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

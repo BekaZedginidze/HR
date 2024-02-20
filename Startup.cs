@@ -64,6 +64,7 @@ namespace HR
             });
             services.AddDbContext<HrDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICustomerService, CustomerService>();
         }
 
 
